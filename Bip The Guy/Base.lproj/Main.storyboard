@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +10,90 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Bip_The_Guy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nL6-J7-wEZ">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="angryguy" translatesAutoresizingMaskIntoConstraints="NO" id="fYG-aT-sTu">
+                                        <rect key="frame" x="8" y="8" width="304" height="404"/>
+                                        <gestureRecognizers/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="404" id="jcr-9Z-hVX"/>
+                                        </constraints>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="ZCv-HD-MO8" appends="YES" id="bNI-ym-17s"/>
+                                        </connections>
+                                    </imageView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="KIJ-6n-M7m">
+                                        <rect key="frame" x="50" y="420" width="221" height="58.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose Image to Punch" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e9F-Vd-QKN">
+                                                <rect key="frame" x="19.5" y="0.0" width="182.5" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="53" translatesAutoresizingMaskIntoConstraints="NO" id="QBm-hy-wCe">
+                                                <rect key="frame" x="0.0" y="28.5" width="221" height="30"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BK6-AC-tOx">
+                                                        <rect key="frame" x="0.0" y="0.0" width="92" height="30"/>
+                                                        <state key="normal" title="Photo Library"/>
+                                                        <connections>
+                                                            <action selector="libraryPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="08H-m1-P1u"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AH4-Uq-LeD">
+                                                        <rect key="frame" x="145" y="0.0" width="76" height="30"/>
+                                                        <state key="normal" title="Take Photo"/>
+                                                        <connections>
+                                                            <action selector="cameraPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6iv-mE-LWa"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstItem="fYG-aT-sTu" firstAttribute="top" secondItem="nL6-J7-wEZ" secondAttribute="top" constant="8" id="BkR-YM-FaD"/>
+                                    <constraint firstAttribute="trailing" secondItem="fYG-aT-sTu" secondAttribute="trailing" constant="8" id="Cff-ZI-dGf"/>
+                                    <constraint firstAttribute="trailing" secondItem="KIJ-6n-M7m" secondAttribute="trailing" constant="49" id="MlD-8q-9yA"/>
+                                    <constraint firstItem="KIJ-6n-M7m" firstAttribute="top" secondItem="fYG-aT-sTu" secondAttribute="bottom" constant="8" id="Zrj-vg-C91"/>
+                                    <constraint firstItem="KIJ-6n-M7m" firstAttribute="leading" secondItem="nL6-J7-wEZ" secondAttribute="leading" constant="50" id="pLF-w7-OTo"/>
+                                    <constraint firstItem="fYG-aT-sTu" firstAttribute="leading" secondItem="nL6-J7-wEZ" secondAttribute="leading" constant="8" id="zf0-FI-a9x"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="nL6-J7-wEZ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="2Ab-7Y-ZX9"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="nL6-J7-wEZ" secondAttribute="bottom" id="6tx-Fi-dw0"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="nL6-J7-wEZ" secondAttribute="trailing" id="OSc-wK-9Q0"/>
+                            <constraint firstItem="nL6-J7-wEZ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="cih-Ga-XR7"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="imageToPunch" destination="fYG-aT-sTu" id="o85-Yl-DCe"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="ZCv-HD-MO8">
+                    <connections>
+                        <action selector="imageTapped:" destination="BYZ-38-t0r" id="DLs-gz-lvO"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
+            <point key="canvasLocation" x="138.75" y="116.19718309859155"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="angryguy" width="1200" height="800"/>
+    </resources>
 </document>
